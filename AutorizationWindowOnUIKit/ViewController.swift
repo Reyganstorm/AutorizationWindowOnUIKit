@@ -14,19 +14,18 @@ class ViewController: UIViewController {
     
     let login = "ALEX"
     let password = "Password"
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-       
-    }
 
-
-    
     @IBAction func enterButtornPressed() {
         guard login == loginTextField.text && password == passwordTextField.text else {return showAlert(title: "Wrong login or password!", message: "Please will try agane.")}
     }
     
+    @IBAction func forgotLogin() {
+        showAlert(title: "Ooops!", message: "Your login is ALEX" )
+    }
     
+    @IBAction func forgotPassword() {
+        showAlert(title: "Big oops!", message: "Your password is Password")
+    }
     
 }
 

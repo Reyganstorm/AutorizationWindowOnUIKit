@@ -66,6 +66,9 @@
                                                 </fragment>
                                             </attributedString>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <action selector="forgotLogin" destination="BYZ-38-t0r" eventType="touchUpInside" id="nPD-cK-f2e"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3k5-aE-ZU5">
                                         <rect key="frame" x="136.33333333333331" y="0.0" width="136.33333333333331" height="30.333333333333332"/>
@@ -80,6 +83,9 @@
                                                 </fragment>
                                             </attributedString>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <action selector="forgotPassword" destination="BYZ-38-t0r" eventType="touchUpInside" id="ieT-Ge-nnZ"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
