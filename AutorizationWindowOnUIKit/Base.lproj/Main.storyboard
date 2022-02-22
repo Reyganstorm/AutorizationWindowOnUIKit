@@ -44,6 +44,7 @@
                                             </attributedString>
                                         </buttonConfiguration>
                                         <connections>
+                                            <action selector="enterButtornPressed" destination="BYZ-38-t0r" eventType="touchUpInside" id="2U2-yS-3vW"/>
                                             <segue destination="RUb-PK-69w" kind="presentation" id="COa-ok-vbu"/>
                                         </connections>
                                     </button>
@@ -93,6 +94,10 @@
                             <constraint firstItem="Oqp-cJ-VNo" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="100" id="zVh-W7-G4N"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="loginTextField" destination="NAB-1R-3ww" id="7fD-bn-2Gb"/>
+                        <outlet property="passwordTextField" destination="evg-wJ-52a" id="m3j-5G-jwW"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
