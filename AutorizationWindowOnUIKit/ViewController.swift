@@ -9,33 +9,28 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    @IBOutlet weak var loginTextField: UITextField!
-    @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet var loginTextField: UITextField!
+    @IBOutlet var passwordTextField: UITextField!
     
-    let login = "ALEX"
-    let password = "Password"
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        loginTextField.delegate = self
-        passwordTextField.delegate = self
-    }
-    
-    
+    private let login = "ALEX"
+    private let password = "Password"
 
     @IBAction func enterButtornPressed() {
-        guard login == loginTextField.text && password == passwordTextField.text else {return showAlert(title: "Wrong login or password!", message: "Please will try agane.")}
+        if loginTextField.text != login || passwordTextField.text != password {
+            showAlert(title: "Invalid lofin or password!", message: "Please try againe")
+        }
     }
     
-    @IBAction func forgotLogin() {
-        showAlert(title: "Ooops!", message: "Your login is ALEX" )
+    @IBAction func forgotSome(_ sender: UIButton) {
+        sender.tag == 0
+        ? showAlert(title: "Ooops!", message: "Your login is ALEX" )
+        : showAlert(title: "Big oops!", message: "Your password is Password")
     }
     
-    @IBAction func forgotPassword() {
-        showAlert(title: "Big oops!", message: "Your password is Password")
+    @IBAction func unwindSegue(segue: UIStoryboardSegue) {
+        loginTextField.text = ""
+        passwordTextField.text = ""
     }
-    
 }
 
 extension ViewController {
@@ -63,10 +58,10 @@ extension ViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         if textField == loginTextField {
             passwordTextField.becomeFirstResponder()
-        } else if textField == passwordTextField {
+        } else   {
             enterButtornPressed()
+            performSegue(withIdentifier: "ShowView", sender: nil)
         }
-
         return true
     }
 }

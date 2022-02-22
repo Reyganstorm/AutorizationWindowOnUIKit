@@ -14,7 +14,4 @@ class InformationViewController: ViewController {
 
     }
     
-    @IBAction func CloseButtonPresed() {
-        dismiss(animated: true)
-    }
 }
