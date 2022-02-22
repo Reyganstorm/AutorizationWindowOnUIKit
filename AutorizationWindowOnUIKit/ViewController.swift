@@ -9,11 +9,20 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    @IBOutlet var loginTextField: UITextField!
-    @IBOutlet var passwordTextField: UITextField!
+    @IBOutlet weak var loginTextField: UITextField!
+    @IBOutlet weak var passwordTextField: UITextField!
     
     let login = "ALEX"
     let password = "Password"
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        loginTextField.delegate = self
+        passwordTextField.delegate = self
+    }
+    
+    
 
     @IBAction func enterButtornPressed() {
         guard login == loginTextField.text && password == passwordTextField.text else {return showAlert(title: "Wrong login or password!", message: "Please will try agane.")}
@@ -47,5 +56,17 @@ extension ViewController {
         
         alert.addAction(okAction)
         present(alert, animated: true)
+    }
+}
+
+extension ViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if textField == loginTextField {
+            passwordTextField.becomeFirstResponder()
+        } else if textField == passwordTextField {
+            enterButtornPressed()
+        }
+
+        return true
     }
 }
