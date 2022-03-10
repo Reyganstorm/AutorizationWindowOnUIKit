@@ -31,11 +31,16 @@ class ViewController: UIViewController {
         passwordTextField.text = ""
     }
     
+    // -MARK: Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let tabBarController = segue.destination as! UITabBarController
+        guard let tabBarController = segue.destination as? UITabBarController else {return}
+        guard let viewControllers = tabBarController.viewControllers else {return}
         for viewController in viewControllers {
             if let welcomeWC = viewController as? WellcomeViewController {
                 welcomeWC.user = userPerson.fullName
+            } else if let navigationVC = viewController as? UINavigationController {
+                let aboutUserVC = navigationVC.topViewController as! InformationViewController 
+                aboutUserVC.user = userPerson
             }
         }
     }

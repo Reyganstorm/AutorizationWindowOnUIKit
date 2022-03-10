@@ -7,12 +7,17 @@
 
 import UIKit
 
-class MoreInfoViewController: ViewController {
-
+class MoreInfoViewController: UIViewController {
+    
+    var moreInfo = ""
+    
+    
+    @IBOutlet var infoLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        infoLabel.text = moreInfo
     }
 
 }

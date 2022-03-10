@@ -10,6 +10,7 @@
 		E856AF5027DA2BA200365FD5 /* Persone.swift in Sources */ = {isa = PBXBuildFile; fileRef = E856AF4F27DA2BA200365FD5 /* Persone.swift */; };
 		E856AF5627DA4A3400365FD5 /* WellcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E856AF5527DA4A3400365FD5 /* WellcomeViewController.swift */; };
 		E856AF5827DA529300365FD5 /* MoreInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E856AF5727DA529300365FD5 /* MoreInfoViewController.swift */; };
+		E856AF5A27DA620B00365FD5 /* InformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E856AF5927DA620B00365FD5 /* InformationViewController.swift */; };
 		E8BE386627C4292600B2AF87 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8BE386527C4292600B2AF87 /* AppDelegate.swift */; };
 		E8BE386827C4292600B2AF87 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8BE386727C4292600B2AF87 /* SceneDelegate.swift */; };
 		E8BE386A27C4292600B2AF87 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8BE386927C4292600B2AF87 /* ViewController.swift */; };
@@ -22,6 +23,7 @@
 		E856AF4F27DA2BA200365FD5 /* Persone.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persone.swift; sourceTree = "<group>"; };
 		E856AF5527DA4A3400365FD5 /* WellcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WellcomeViewController.swift; sourceTree = "<group>"; };
 		E856AF5727DA529300365FD5 /* MoreInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreInfoViewController.swift; sourceTree = "<group>"; };
+		E856AF5927DA620B00365FD5 /* InformationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationViewController.swift; sourceTree = "<group>"; };
 		E8BE386227C4292600B2AF87 /* AutorizationWindowOnUIKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AutorizationWindowOnUIKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8BE386527C4292600B2AF87 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E8BE386727C4292600B2AF87 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -48,6 +50,7 @@
 			children = (
 				E856AF5527DA4A3400365FD5 /* WellcomeViewController.swift */,
 				E856AF5727DA529300365FD5 /* MoreInfoViewController.swift */,
+				E856AF5927DA620B00365FD5 /* InformationViewController.swift */,
 				E8BE386927C4292600B2AF87 /* ViewController.swift */,
 			);
 			path = ViewControllers;
@@ -189,6 +192,7 @@
 			files = (
 				E856AF5027DA2BA200365FD5 /* Persone.swift in Sources */,
 				E8BE386A27C4292600B2AF87 /* ViewController.swift in Sources */,
+				E856AF5A27DA620B00365FD5 /* InformationViewController.swift in Sources */,
 				E856AF5627DA4A3400365FD5 /* WellcomeViewController.swift in Sources */,
 				E856AF5827DA529300365FD5 /* MoreInfoViewController.swift in Sources */,
 				E8BE386627C4292600B2AF87 /* AppDelegate.swift in Sources */,
