@@ -9,27 +9,35 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    let userPerson = Person.getPerson()
+    
     @IBOutlet var loginTextField: UITextField!
     @IBOutlet var passwordTextField: UITextField!
     
-    private let login = "ALEX"
-    private let password = "Password"
-
     @IBAction func enterButtornPressed() {
-        if loginTextField.text != login || passwordTextField.text != password {
+        if loginTextField.text != userPerson.login || passwordTextField.text != userPerson.password {
             showAlert(title: "Invalid lofin or password!", message: "Please try againe")
         }
     }
     
     @IBAction func forgotSome(_ sender: UIButton) {
         sender.tag == 0
-        ? showAlert(title: "Ooops!", message: "Your login is ALEX" )
-        : showAlert(title: "Big oops!", message: "Your password is Password")
+        ? showAlert(title: "Ooops!", message: "Your login is \(userPerson.login)" )
+        : showAlert(title: "Big oops!", message: "Your password is \(userPerson.password)")
     }
     
     @IBAction func unwindSegue(segue: UIStoryboardSegue) {
         loginTextField.text = ""
         passwordTextField.text = ""
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let tabBarController = segue.destination as! UITabBarController
+        for viewController in viewControllers {
+            if let welcomeWC = viewController as? WellcomeViewController {
+                welcomeWC.user = userPerson.fullName
+            }
+        }
     }
 }
 
