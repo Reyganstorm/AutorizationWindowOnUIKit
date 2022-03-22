@@ -9,10 +9,26 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    let userPerson = Person.getPerson()
-    
     @IBOutlet var loginTextField: UITextField!
     @IBOutlet var passwordTextField: UITextField!
+    
+    
+    let userPerson = Person.getPerson()
+    
+    // -MARK: Navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let tabBarController = segue.destination as? UITabBarController else {return}
+        guard let viewControllers = tabBarController.viewControllers else {return}
+        
+        for viewController in viewControllers {
+            if let welcomeWC = viewController as? WellcomeViewController {
+                welcomeWC.user = userPerson.fullName
+            } else if let navigationVC = viewController as? UINavigationController {
+                let aboutUserVC = navigationVC.topViewController as! InformationViewController
+                aboutUserVC.user = userPerson
+            }
+        }
+    }
     
     @IBAction func enterButtornPressed() {
         if loginTextField.text != userPerson.login || passwordTextField.text != userPerson.password {
@@ -31,19 +47,6 @@ class ViewController: UIViewController {
         passwordTextField.text = ""
     }
     
-    // -MARK: Navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let tabBarController = segue.destination as? UITabBarController else {return}
-        guard let viewControllers = tabBarController.viewControllers else {return}
-        for viewController in viewControllers {
-            if let welcomeWC = viewController as? WellcomeViewController {
-                welcomeWC.user = userPerson.fullName
-            } else if let navigationVC = viewController as? UINavigationController {
-                let aboutUserVC = navigationVC.topViewController as! InformationViewController 
-                aboutUserVC.user = userPerson
-            }
-        }
-    }
 }
 
 extension ViewController {
