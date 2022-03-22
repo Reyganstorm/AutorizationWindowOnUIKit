@@ -12,7 +12,6 @@ class ViewController: UIViewController {
     @IBOutlet var loginTextField: UITextField!
     @IBOutlet var passwordTextField: UITextField!
     
-    
     let userPerson = Person.getPerson()
     
     // -MARK: Navigation
