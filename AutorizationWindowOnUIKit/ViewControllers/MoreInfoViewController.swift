@@ -11,7 +11,6 @@ class MoreInfoViewController: UIViewController {
     
     var moreInfo = ""
     
-    
     @IBOutlet var infoLabel: UILabel!
     
     override func viewDidLoad() {
